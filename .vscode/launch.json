@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "start-with-cmake",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "run-make",
+            "program": "${workspaceFolder}/build/bin/hello-cmake-app",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}
