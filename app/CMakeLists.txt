@@ -29,6 +29,8 @@ set(PROJECT_SOURCE_FILES
 message(STATUS "PROJECT_SOURCE_FILES = ${PROJECT_SOURCE_FILES}")
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCE_FILES})
+add_dependencies(${PROJECT_NAME} vscpp-engine)
+ 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
         ${Boost_INCLUDE_DIRS}
@@ -39,6 +41,9 @@ target_link_libraries(${PROJECT_NAME}
     ${Boost_LIBRARIES}
     vscpp-engine
 )
+
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
 
 message("========== END: ${PROJECT_NAME} ==========")
 message("")

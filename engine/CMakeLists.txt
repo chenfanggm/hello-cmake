@@ -22,13 +22,20 @@ message(STATUS "CMAKE_CXX_COMPILER = ${CMAKE_CXX_COMPILER}")
 message(STATUS "CMAKE_CXX_FLAGS = ${CMAKE_CXX_FLAGS}")
 
 # source
-set(PROJECT_SOURCE_FILES 
+set(PROJECT_HEADER_FILES
     src/operations.h
+)
+set(PROJECT_SOURCE_FILES 
+    ${PROJECT_HEADER_FILES}
     src/operations.cpp
 )
 message(STATUS "PROJECT_SOURCE_FILES = ${PROJECT_SOURCE_FILES}")
 
 add_library(${PROJECT_NAME} ${PROJECT_SOURCE_FILES})
+
+message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
+install(FILES ${PROJECT_HEADER_FILES} DESTINATION include)
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
 
 message("========== END: ${PROJECT_NAME} ==========")
 message("")
