@@ -47,3 +47,7 @@ message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
 
 message("========== END: ${PROJECT_NAME} ==========")
 message("")
+
+message("========== START: ${PROJECT_NAME} - TEST ==========")
+message("========== END: ${PROJECT_NAME} - TEST ==========")
+message("")
