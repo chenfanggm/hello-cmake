@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "run-make",
-            "program": "${workspaceFolder}/build/bin/hello-cmake-app",
+            "program": "${workspaceFolder}/build/bin/vscpp-app",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
