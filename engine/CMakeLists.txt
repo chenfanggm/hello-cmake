@@ -4,8 +4,6 @@ message("")
 message("========== START: ${PROJECT_NAME} ==========")
 
 # c++ config
-set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++17 -stdlib=libc++")
@@ -23,15 +21,23 @@ message(STATUS "CMAKE_CXX_FLAGS = ${CMAKE_CXX_FLAGS}")
 
 # source
 set(PROJECT_HEADER_FILES
-    src/operations.h
+    src/Viper.h
+    src/libs/Core.h
+    src/libs/Application.h
 )
 set(PROJECT_SOURCE_FILES 
     ${PROJECT_HEADER_FILES}
-    src/operations.cpp
+    src/libs/Application.cpp
 )
 message(STATUS "PROJECT_SOURCE_FILES = ${PROJECT_SOURCE_FILES}")
 
 add_library(${PROJECT_NAME} ${PROJECT_SOURCE_FILES})
+
+target_compile_definitions(${PROJECT_NAME} 
+    PRIVATE 
+        VIPER_PLATFORM_OSX
+        VIPER_BUILD_DLL
+)
 
 message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
 install(FILES ${PROJECT_HEADER_FILES} DESTINATION include)
