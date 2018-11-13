@@ -11,7 +11,8 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "cfenv": "cpp"
     },
     "C_Cpp.intelliSenseEngineFallback": "Disabled"
 }

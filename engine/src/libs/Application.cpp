@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Log.h"
 #include "Application.h"
 
 namespace viper {
@@ -7,6 +8,6 @@ namespace viper {
     Application::~Application() {}
 
     void Application::run() {
-        std::cout << "-- Running App" << std::endl;
+        VIPER_INFO("-- Running App");
     }
 }

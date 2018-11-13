@@ -4,7 +4,10 @@
 extern viper::Application* viper::createApp();
 
 int main(int argc, char** argv) {
-    printf("-- Starting Viper Engine\n");
+    viper::Log::Init();
+    VIPER_CORE_WARN("-- Log service initialized");
+    VIPER_INFO("-- Starting Viper Engine");
+
     viper::Application* app = viper::createApp();
     app->run();
     delete app;

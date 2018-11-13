@@ -22,6 +22,8 @@
                 "-G",
                 "Unix Makefiles",
                 "-DCMAKE_BUILD_TYPE=Debug",
+                // "--debug-output",
+                // "--trace",
                 ".."
             ],
             "options": {
@@ -59,7 +61,8 @@
             "command": "make",
             "args": [
                 "-j",
-                "8"
+                "8",
+                "VERBOSE=1"
             ],
             "options": {
                 "cwd": "${workspaceRoot}/build"

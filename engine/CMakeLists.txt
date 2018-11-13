@@ -19,19 +19,33 @@ message(STATUS "CMAKE_ARCHIVE_OUTPUT_DIRECTORY = ${CMAKE_ARCHIVE_OUTPUT_DIRECTOR
 message(STATUS "CMAKE_CXX_COMPILER = ${CMAKE_CXX_COMPILER}")
 message(STATUS "CMAKE_CXX_FLAGS = ${CMAKE_CXX_FLAGS}")
 
+# package
+find_package(spdlog REQUIRED)
+if(spdlog_FOUND)
+    message(STATUS "PACKAGE_FOUND = spdlog")
+else()
+    error("PACKAGE_NOT_FOUND = spdlog")
+endif()
+
 # source
 set(PROJECT_HEADER_FILES
     src/Viper.h
     src/libs/Core.h
+    src/libs/Log.h
     src/libs/Application.h
 )
 set(PROJECT_SOURCE_FILES 
     ${PROJECT_HEADER_FILES}
+    src/libs/Log.cpp
     src/libs/Application.cpp
 )
 message(STATUS "PROJECT_SOURCE_FILES = ${PROJECT_SOURCE_FILES}")
 
 add_library(${PROJECT_NAME} ${PROJECT_SOURCE_FILES})
+
+target_link_libraries(${PROJECT_NAME} 
+    spdlog::spdlog
+)
 
 target_compile_definitions(${PROJECT_NAME} 
     PRIVATE 
