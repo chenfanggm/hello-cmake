@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "run-make",
-            "program": "${workspaceFolder}/build/bin/vscpp-app",
+            "program": "${workspaceFolder}/build/bin/artifacted",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

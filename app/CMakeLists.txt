@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(vscpp-app)
+project(artifacted)
 message("")
 message("========== START: ${PROJECT_NAME} ==========")
 
